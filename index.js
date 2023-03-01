@@ -5,7 +5,7 @@ require("./startup/routes")(app);
 require("./startup/logging");
 require("./startup/db")();
 require("./startup/config")();
-if (app.get("env") === "production") require("./startup/prod")(app);
+require("./startup/prod")(app);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listning on port ${port}..`));
